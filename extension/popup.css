@@ -1,0 +1,173 @@
+/* popup.css — Extension toolbar popup styles */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0f0f1a;
+  color: #e2e8f0;
+  width: 260px;
+  min-height: 100px;
+}
+
+.p-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.p-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  background: #1a1a2e;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.p-logo-icon {
+  width: 18px;
+  height: 18px;
+  color: #e50914;
+  flex-shrink: 0;
+}
+
+.p-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* ── Sections ───────────────────────────────────────────────── */
+.p-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+}
+
+/* ── Status pill ────────────────────────────────────────────── */
+.p-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.p-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.p-status-idle  .p-dot { background: #64748b; }
+.p-status-live  .p-dot { background: #22c55e; box-shadow: 0 0 6px #22c55e; animation: p-pulse 1.5s infinite; }
+
+@keyframes p-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+/* ── Hint text ──────────────────────────────────────────────── */
+.p-hint {
+  font-size: 12px;
+  color: #8892a4;
+  line-height: 1.5;
+}
+
+/* ── Site list ──────────────────────────────────────────────── */
+.p-sites {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p-sites li {
+  font-size: 12px;
+  color: #94a3b8;
+  padding: 2px 0;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.p-btn {
+  width: 100%;
+  padding: 9px 14px;
+  background: linear-gradient(135deg, #e50914, #b00020);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+
+.p-btn:hover { opacity: 0.88; }
+
+.p-icon-btn {
+  background: #1a1a2e;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  color: #8892a4;
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.p-icon-btn:hover { color: #e2e8f0; background: rgba(255,255,255,0.08); }
+.p-icon-btn svg { width: 14px; height: 14px; display: block; }
+
+/* ── Room info ──────────────────────────────────────────────── */
+.p-room-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a2e;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.p-room-label {
+  font-size: 10px;
+  color: #8892a4;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.p-room-code {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff4757;
+  letter-spacing: 3px;
+}
+
+.p-members-count {
+  font-size: 12px;
+  color: #8892a4;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.p-footer {
+  font-size: 10px;
+  color: #4a5568;
+  text-align: center;
+  padding: 8px 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.p-footer a {
+  color: #e50914;
+  text-decoration: none;
+}

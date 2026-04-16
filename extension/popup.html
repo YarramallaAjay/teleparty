@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MovieParty</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="p-wrap">
+
+    <div class="p-header">
+      <svg class="p-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.875v6.25a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      </svg>
+      <span class="p-title">MovieParty</span>
+    </div>
+
+    <!-- Not on a streaming site -->
+    <div id="p-no-site" class="p-section" style="display:none">
+      <p class="p-hint">Navigate to a supported streaming site to start a party:</p>
+      <ul class="p-sites">
+        <li>🎬 Netflix</li>
+        <li>📦 Amazon Prime Video</li>
+        <li>✨ Disney+</li>
+        <li>🟢 Hulu</li>
+        <li>🔵 Max (HBO)</li>
+        <li>▶️ YouTube</li>
+        <li>🦚 Peacock</li>
+        <li>⭐ Paramount+</li>
+        <li>🍎 Apple TV+</li>
+        <li>🎭 MUBI · Crunchyroll · more</li>
+      </ul>
+    </div>
+
+    <!-- On a streaming site, not in a party -->
+    <div id="p-idle" class="p-section" style="display:none">
+      <div class="p-status p-status-idle">
+        <span class="p-dot"></span>
+        Not in a party
+      </div>
+      <p class="p-hint">Use the sidebar on the page to create or join a party.</p>
+      <button id="p-open-sidebar" class="p-btn">Open Sidebar</button>
+    </div>
+
+    <!-- In a party -->
+    <div id="p-in-party" class="p-section" style="display:none">
+      <div class="p-status p-status-live">
+        <span class="p-dot"></span>
+        Party is live!
+      </div>
+      <div class="p-room-row">
+        <div>
+          <div class="p-room-label">Room ID</div>
+          <div id="p-room-id" class="p-room-code"></div>
+        </div>
+        <button id="p-copy-id" class="p-icon-btn" title="Copy Room ID">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+        </button>
+      </div>
+      <div id="p-member-count" class="p-members-count"></div>
+      <button id="p-open-chat" class="p-btn">Open Chat</button>
+    </div>
+
+    <div class="p-footer">v1.0 · <a href="#" id="p-gh-link">MovieParty</a></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

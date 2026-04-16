@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "MovieParty – Watch Together",
+  "version": "1.0.0",
+  "description": "Watch Netflix, Prime, Disney+, Hulu, Max, YouTube and more in perfect sync with friends.",
+
+  "permissions": ["storage", "tabs", "scripting"],
+
+  "host_permissions": [
+    "https://www.netflix.com/*",
+    "https://www.primevideo.com/*",
+    "https://www.amazon.com/gp/video/*",
+    "https://www.amazon.com/dp/*",
+    "https://www.disneyplus.com/*",
+    "https://www.hulu.com/*",
+    "https://www.max.com/*",
+    "https://tv.apple.com/*",
+    "https://www.youtube.com/*",
+    "https://www.peacocktv.com/*",
+    "https://www.paramountplus.com/*",
+    "https://mubi.com/*",
+    "https://www.crunchyroll.com/*",
+    "https://www.discoveryplus.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "MovieParty",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.netflix.com/*",
+        "https://www.primevideo.com/*",
+        "https://www.amazon.com/gp/video/*",
+        "https://www.amazon.com/dp/*",
+        "https://www.disneyplus.com/*",
+        "https://www.hulu.com/*",
+        "https://www.max.com/*",
+        "https://tv.apple.com/*",
+        "https://www.youtube.com/*",
+        "https://www.peacocktv.com/*",
+        "https://www.paramountplus.com/*",
+        "https://mubi.com/*",
+        "https://www.crunchyroll.com/*",
+        "https://www.discoveryplus.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["sidebar.css"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
