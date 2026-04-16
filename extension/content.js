@@ -21,7 +21,7 @@
   //  CONFIG
   // ═══════════════════════════════════════════════════════════════
 
-  const SERVER_URL = 'ws://teleparty-production.up.railway.app:8080'; // ← change for production
+  const SERVER_URL = 'wss://teleparty-production.up.railway.app'; // Railway terminates TLS — use wss://, no port
 
   // ═══════════════════════════════════════════════════════════════
   //  STATE

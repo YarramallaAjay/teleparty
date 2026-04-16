@@ -7,10 +7,25 @@
  * After deploying, update SERVER_URL in extension/content.js to point to your server.
  */
 
+const http      = require('http');
 const WebSocket = require('ws');
 
 const PORT = process.env.PORT || 8080;
-const wss = new WebSocket.Server({ port: PORT });
+
+// ─── HTTP server ──────────────────────────────────────────────────────────────
+// Railway (and most PaaS) require an HTTP server on the assigned PORT.
+// WebSocket upgrade requests are handled on the same server.
+const httpServer = http.createServer((req, res) => {
+  if (req.url === '/health') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'ok', rooms: rooms.size, ts: Date.now() }));
+    return;
+  }
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('MovieParty server is running.\n');
+});
+
+const wss = new WebSocket.Server({ server: httpServer });
 
 // rooms: Map<roomId, Map<userId, MemberRecord>>
 // MemberRecord: { ws, userId, username, isHost }
@@ -247,5 +262,8 @@ wss.on('connection', (ws) => {
   });
 });
 
-console.log(`\n🎬  MovieParty server  →  ws://localhost:${PORT}`);
-console.log(`    Update SERVER_URL in extension/content.js for production use.\n`);
+httpServer.listen(PORT, () => {
+  console.log(`\n🎬  MovieParty server  →  http://localhost:${PORT}`);
+  console.log(`    Health check  →  http://localhost:${PORT}/health`);
+  console.log(`    Railway WSS   →  wss://<your-app>.up.railway.app\n`);
+});
