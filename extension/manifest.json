@@ -7,6 +7,7 @@
   "permissions": ["storage", "tabs", "scripting"],
 
   "host_permissions": [
+    "https://teleparty-production.up.railway.app/*",
     "https://www.netflix.com/*",
     "https://www.primevideo.com/*",
     "https://www.amazon.com/gp/video/*",
