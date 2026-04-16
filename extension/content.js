@@ -21,7 +21,7 @@
   //  CONFIG
   // ═══════════════════════════════════════════════════════════════
 
-  const SERVER_URL = 'ws://localhost:8080'; // ← change for production
+  const SERVER_URL = 'ws://teleparty-production.up.railway.app:8080'; // ← change for production
 
   // ═══════════════════════════════════════════════════════════════
   //  STATE
