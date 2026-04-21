@@ -21,7 +21,8 @@
     "https://www.paramountplus.com/*",
     "https://mubi.com/*",
     "https://www.crunchyroll.com/*",
-    "https://www.discoveryplus.com/*"
+    "https://www.discoveryplus.com/*",
+    "https://www.hotstar.com/*"
   ],
 
   "background": {
@@ -54,7 +55,9 @@
         "https://www.paramountplus.com/*",
         "https://mubi.com/*",
         "https://www.crunchyroll.com/*",
-        "https://www.discoveryplus.com/*"
+        "https://www.discoveryplus.com/*",
+        "https://www.hotstar.com/*"
+
       ],
       "js": ["content.js"],
       "css": ["sidebar.css"],

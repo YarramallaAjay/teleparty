@@ -14,6 +14,7 @@ const STREAMING_DOMAINS = [
   'mubi.com',
   'crunchyroll.com',
   'discoveryplus.com',
+  'hotstar.com'
 ];
 
 function show(id) { document.getElementById(id).style.display = 'flex'; }

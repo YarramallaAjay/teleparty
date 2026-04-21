@@ -64,6 +64,8 @@
     'mubi.com':          ['video'],
     'crunchyroll.com':   ['video'],
     'discoveryplus.com': ['video'],
+    'hotstar.com':       ['.VideoContainer video', '[data-videoplayer] video', 'video'],
+
   };
 
   function getPlatformSelectors() {
@@ -419,7 +421,7 @@
         </div>
 
         <div class="mp-platforms">
-          Works on Netflix · Prime · Disney+ · Hulu · Max · YouTube · Peacock · Paramount+ · Apple TV+ · more
+          Works on Netflix · Prime · Disney+ · Hulu · Max · YouTube · Peacock · Paramount+ · Apple TV+ · Hotstar. more
         </div>
       </div>
 
